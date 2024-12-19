@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Usaha Kami</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Contact Section */
+#contact-section {
+    background-color: #f7f7f7;
+    padding: 2rem;
+    text-align: center;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+#contact-section h2 {
+    font-size: 2.5rem;
+    color: #ebb93b;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contact-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 500px;
+    width: 90%;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info p::before {
+    content: "•";
+    color: #ebb93b;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Links Styling */
+.contact-info a {
+    color: #ebb93b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
+/* Icons Styling */
+.contact-info p span {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    #contact-section h2 {
+        font-size: 2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kontak Kami</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="lokasi.html">Lokasi</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contact-section" class="slide contact clearfix">
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+        <p>🕒 Open Hours: 12:00 - 23:00</p>
+        <p>📞 WhatsApp: 0821915788730</p>
+        <p>📸 Instagram: chartea_selayar</p>
+        <p>📍 Outlet: Benteng, Selayar, Jl. KH Hayyung No. 99</p>
+    </div>
+    </section>
+</body>
+</html>

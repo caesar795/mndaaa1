@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Chartea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8lv6j6LDek3Bq1n2J9jNkguzq00OR3sPmtKpp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <style>
+        body { overflow: hidden; font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f7f7f7; overflow-x: hidden; }
+
+        header {
+            background-color: #ebb93b;
+            color: #333;
+            padding: 0.5rem 1.5rem; /* Reduced padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0px;
+        }
+
+        header img { width: 100px; height: auto; margin-right: 10px; } /* Logo size */
+        header h1 {
+            font-size: 1.5rem; /* Smaller font size */
+            margin: 0;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            font-variant: inherit;
+            color: #040101;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 20px; /* Smaller font size */
+            padding: 0.5rem;
+        }
+
+        nav ul li a:hover { 
+            color: #ff8c00; 
+            border-bottom: 2px solid #ff8c00; /* Add underline effect */
+        }
+
+       #home {
+    background: url('bg2.jpg') no-repeat center center/cover;
+    color: rgb(29, 2, 2);
+    text-align: center;
+    height: 100vh; /* Full screen height */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack elements vertically */
+    margin: 0;
+    overflow: hidden;
+}
+#home h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #0f0404;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #f1f1f1;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Add subtle shadow */
+}
+
+#home a.btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#home a.btn:hover {
+    background-color: #e07a00;
+}
+
+
+        .product-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .product {
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        #contact-section {
+            padding: 2rem;
+            background-color: #ffcf56;
+            color: #333;
+            text-align: center;
+        }
+
+        #map {
+            margin-top: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    header img {
+        width: 80px; /* Smaller logo size for mobile */
+        margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    #home h1 {
+        font-size: 2.5rem;
+        line-height: 1.3; /* Adjust line spacing */
+    }
+
+    #home p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #home a.btn {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    .product-gallery {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .product {
+        width: 90%;
+    }
+
+    #map {
+        height: 300px; /* Reduce map height for mobile */
+        margin-top: 1rem;
+    }
+
+    #contact-section {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="chartealogo.jpg" alt="Chartea Logo"> <!-- Add your logo file here -->
+            <h1>"Drink and be happy with Chartea"</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li><a href="lokasi.html">Lokasi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h1>Good <span>Tea</span> Will Always <br /> Make You Smile</h1>
+            <p>We provide a variety of unique and delicious teas.</p>
+            <a href="#" class="btn" style="background-color: #ff8c00; color: white; padding: 0.8rem 1.5rem; text-decoration: none; font-weight: bold; border-radius: 5px;">Shop Now</a>
+        </div>
+    </section>
+
+    <main>
+        <h2>Selamat Datang di Usaha Kami!</h2>
+        <p>Temukan informasi lebih lanjut tentang produk dan layanan kami di menu lainnya.</p>
+        <div id="map" style="height: 500px;"></div>
+    </main>
+
+    <script>
+        var map = L.map('map').setView([-6.115016, 120.45917], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        const geojsonFiles = ['sekolah.geojson', 'chartea.geojson', 'mesjid2.geojson', 'BENTENG.geojson', 'JALAN2.geojson', 'JALANN.geojson'];
+
+        Promise.all(geojsonFiles.map(file => fetch(file).then(res => res.json())))
+            .then(dataArray => {
+                dataArray.forEach(data => {
+                    L.geoJSON(data, {
+                        pointToLayer: (feature, latlng) => {
+                            const marker = L.marker(latlng).addTo(map);
+                            const name = feature.properties['NAMA SEKOLAH'] || feature.properties['NAMA USAHA'] || feature.properties['NAMA MESJID'] || "Unknown Location";
+                            marker.bindTooltip(name, {
+                                permanent: true,
+                                direction: 'top',
+                                offset: [0, -10],
+                                className: 'custom-tooltip'
+                            }).openTooltip();
+                        }
+                    }).addTo(map);
+                });
+            })
+            .catch(error => console.error('Error loading GeoJSON files:', error));
+    </script>
+</body>
+</html>
